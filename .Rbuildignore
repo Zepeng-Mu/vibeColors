@@ -1,0 +1,16 @@
+^\.Rproj\.user$
+^\.Rhistory$
+^\.Rdata$
+^\.httr-oauth$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
+^\.vscode$
+^node_modules$
+^\.kilocodeignore$
+^README\.Rmd$
+^README\.md$
+^LICENSE\.md$
+^cran-comments\.md$
+^\.DS_Store$
