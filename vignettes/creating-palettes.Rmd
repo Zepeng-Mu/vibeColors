@@ -1,0 +1,118 @@
+---
+title: "Creating Custom Palettes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Creating Custom Palettes}
+  %\VignetteEngine{rmarkdown::render}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Creating Custom Palettes
+
+This guide explains how to add your own custom color palettes to vibeColors.
+
+## Adding Palettes to the Package
+
+To add a new palette, you need to edit the `vibe_palettes` list in the `R/pal.
+
+## Palette Structureettes.R` file
+
+Each palette should be a named character vector of hex color codes:
+
+```r
+vibe_palettes <- list(
+  my_palette = c("#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7")
+)
+```
+
+## Guidelines for Good Palettes
+
+### 1. Use Meaningful Colors
+
+Choose colors that are:
+- **Distinct**: Colors should be easily distinguishable from each other
+- **Accessible**: Consider colorblind-friendly palettes
+- **Cohesive**: Colors should work well together as a group
+
+### 2. Consider Color Theory
+
+- **Complementary**: Colors opposite on the color wheel
+- **Analogous**: Colors adjacent on the color wheel
+- **Triadic**: Three colors equally spaced on the color wheel
+- **Sequential**: Colors that progress from light to dark (or vice versa)
+
+### 3. Test Your Palettes
+
+Use the built-in functions to test your palettes:
+
+```{r test-palette}
+library(vibeColors)
+library(ggplot2)
+
+# After adding your palette to vibe_palettes list:
+# palette_preview("my_palette")
+```
+
+## Example: Creating a Sequential Palette
+
+Sequential palettes are great for showing ordered data:
+
+```r
+vibe_palettes <- list(
+  ocean = c("#F7FBFF", "#DEEBF7", "#C6DBEF", "#9ECAE1",
+            "#6BAED6", "#4292C6", "#2171B5", "#08519C", "#08306B")
+)
+```
+
+## Example: Creating a Categorical Palette
+
+Categorical palettes work best for discrete data:
+
+```r
+vibe_palettes <- list(
+  sunset = c("#FF6B6B", "#FFA07A", "#FFD700", "#FF8C00", "#FF4500")
+)
+```
+
+## Testing Your Palette with ggplot2
+
+```{r test-ggplot, eval=FALSE}
+# Test with a simple plot
+ggplot(iris, aes(Species, Sepal.Length, fill = Species)) +
+  geom_bar(stat = "identity") +
+  scale_fill_vibe("my_palette")
+```
+
+## Exporting Your Palette
+
+The `vibe_palette()` function allows you to retrieve and customize your palette:
+
+```{r export-example, eval=FALSE}
+# Get raw colors
+vibe_palette("my_palette")
+
+# Get more colors through interpolation
+vibe_palette("my_palette", n = 10)
+
+# Reverse the palette
+vibe_palette("my_palette", reverse = TRUE)
+```
+
+## Best Practices
+
+1. **Start with 3-5 colors** for categorical palettes
+2. **Use 9 colors** for sequential palettes (standard for ggplot2)
+3. **Test with real data** before finalizing
+4. **Consider accessibility** for colorblind users
+
+## Next Steps
+
+- Check the [Getting Started](vibeColors.html) guide for basic usage
+- Explore the reference documentation for all available functions

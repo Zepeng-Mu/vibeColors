@@ -1,0 +1,72 @@
+# pkgdown configuration file
+
+url: https://yourusername.github.io/vibeColors/
+
+template:
+  package: vibeColors
+  bootstrap: 5
+  bslib:
+    primary: "#6C5CE7"
+    navbar-bg: "#6C5CE7"
+    font_scale: 1
+
+home:
+  title: vibeColors
+  description: >
+    A collection of color palettes designed for use with ggplot2.
+    Provides discrete and continuous color scales that integrate seamlessly
+    with the ggplot2 plotting system.
+  links:
+    - text: GitHub
+      href: https://github.com/yourusername/vibeColors
+    - text: Report a bug
+      href: https://github.com/yourusername/vibeColors/issues
+
+reference:
+  title: Functions
+  desc: >
+    Core functions for working with color palettes and ggplot2 scales.
+  contents:
+    - vibe_palette
+    - list_vibe_palettes
+    - scale_color_vibe
+    - scale_fill_vibe
+    - scale_color_vibe_c
+    - scale_fill_vibe_c
+    - vibe_palettes
+
+articles:
+  title: Articles
+  desc: >
+    Guides and tutorials for using vibeColors.
+  contents:
+    - title: Getting Started
+      href: articles/vibeColors.html
+    - title: Creating Palettes
+      href: articles/creating-palettes.html
+
+authors:
+  title: Authors
+  desc: >
+    vibeColors is authored by maintainers who are passionate about
+    data visualization and color theory.
+  footer: >
+    <p>This site is built with <a href="https://pkgdown.r-lib.org/">pkgdown</a>.</p>
+
+navbar:
+  type: default
+  structure:
+    left:
+      - home
+      - reference
+      - articles
+    right:
+      - github
+  components:
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/yourusername/vibeColors
+
+development:
+  mode: auto
+  version_label: default

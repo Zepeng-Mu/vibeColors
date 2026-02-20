@@ -1,0 +1,91 @@
+---
+title: "Getting Started with vibeColors"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with vibeColors}
+  %\VignetteEngine{rmarkdown::render}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduction
+
+vibeColors is an R package that provides a collection of color palettes designed for use with ggplot2. This vignette will walk you through the basics of using vibeColors in your data visualization projects.
+
+## Installation
+
+You can install the development version of vibeColors from GitHub:
+
+```r
+# install.packages("devtools")
+devtools::install_github("yourusername/vibeColors")
+```
+
+## Listing Available Palettes
+
+To see all available palettes in the package:
+
+```{r setup}
+library(vibeColors)
+
+# List all available palettes
+list_vibe_palettes()
+```
+
+## Using Palettes with ggplot2
+
+vibeColors provides several scale functions that integrate seamlessly with ggplot2:
+
+### Discrete Scales
+
+For categorical data, use the discrete scale functions:
+
+```{r discrete-example, eval=FALSE}
+library(ggplot2)
+
+# Example with discrete data
+ggplot(mtcars, aes(factor(cyl), fill = factor(cyl))) +
+  geom_bar() +
+  scale_fill_vibe("palette_name")
+```
+
+### Continuous Scales
+
+For continuous data, use the continuous scale functions:
+
+```{r continuous-example, eval=FALSE}
+# Example with continuous data
+ggplot(mtcars, aes(wt, mpg, color = hp)) +
+  geom_point(size = 3) +
+  scale_color_vibe_c("palette_name")
+```
+
+## Palette Reversal
+
+You can reverse any palette by setting `reverse = TRUE`:
+
+```{r reverse-example, eval=FALSE}
+ggplot(mtcars, aes(factor(cyl), fill = factor(cyl))) +
+  geom_bar() +
+  scale_fill_vibe("palette_name", reverse = TRUE)
+```
+
+## Custom Number of Colors
+
+When using discrete scales, you can request more colors than are in the original palette. The package will automatically interpolate to create additional colors:
+
+```{r n-colors-example, eval=FALSE}
+# Get 10 colors from a palette that has fewer
+vibe_palette("palette_name", n = 10)
+```
+
+## Next Steps
+
+- Check out the [Creating Palettes](creating-palettes.html) article to learn how to add your own custom palettes
+- Explore the reference documentation for detailed information on each function
