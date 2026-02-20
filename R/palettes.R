@@ -12,9 +12,31 @@
 # Initialize empty palette list
 # This will be populated with actual palettes later
 vibe_palettes <- list(
-  # Placeholder - no palettes defined yet
-  # Example structure:
-  # palette_name = c("#color1", "#color2", "#color3")
+  CBsafe1 = c(
+    "#0E69B7", # Denim
+    "#D00E12", # Monza
+    "#00B4A6", # Persian Green
+    "#F0E441", # Starship
+    "#57258C", # Daisy Bush
+    "#FE5400", # International Orange
+    "#57B4E9", # Picton Blue
+    "#FFAF01", # Yellow Sea
+    "#AFAFAF", # Silver Chalice
+    "#000000" # Black
+  ),
+  Avedon = c(
+    "#FF7201", # Blaze Orange
+    "#FF8827", # Crusta
+    "#FF9B4C", # Yellow Orange
+    "#FEB274", # Macaroni and Cheese
+    "#F0CBA9", # Mandys Pink
+    "#E2E1DD", # Westar
+    "#C2CEAA", # Coriander
+    "#A1BA77", # Olivine
+    "#8AAC55", # Chelsea Cucumber
+    "#7EA13F", # Sushi
+    "#658C16"  # Vida Loca
+  )
 )
 
 #' Get a Vibe Color Palette
