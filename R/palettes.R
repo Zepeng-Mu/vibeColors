@@ -24,19 +24,6 @@ vibe_palettes <- list(
     "#AFAFAF", # Silver Chalice
     "#000000" # Black
   ),
-  Avedon = c(
-    "#FF7201", # Blaze Orange
-    "#FF8827", # Crusta
-    "#FF9B4C", # Yellow Orange
-    "#FEB274", # Macaroni and Cheese
-    "#F0CBA9", # Mandys Pink
-    "#E2E1DD", # Westar
-    "#C2CEAA", # Coriander
-    "#A1BA77", # Olivine
-    "#8AAC55", # Chelsea Cucumber
-    "#7EA13F", # Sushi
-    "#658C16" # Vida Loca
-  ),
   Crimson = c(
     "#ffc3c7", # 50
     "#ffabb0", # 100
@@ -106,6 +93,45 @@ vibe_palettes <- list(
     "#fa7e23", # 500
     "#c44d00", # 600
     "#903e00" # 700
+  ),
+  AzureCrimson = c(
+    "#005392", # 600
+    "#2775b6", # 500
+    "#3884c6", # 400
+    "#56a2e6", # 300
+    "#75c0ff", # 200
+    "#ffffff",
+    "#ff949a", # 200
+    "#ff7d85", # 300
+    "#fa666f", # 400
+    "#ed5a65", # 500
+    "#bb293d", # 600
+  ),
+  AzurePlum = c(
+    "#005392", # 600
+    "#2775b6", # 500
+    "#3884c6", # 400
+    "#56a2e6", # 300
+    "#75c0ff", # 200
+    "#ffffff",
+    "#f2a5da", # 200
+    "#d68bbf", # 300
+    "#bb71a5", # 400
+    "#ad6598", # 500
+    "#854072", # 600
+  ),
+  Avedon = c(
+    "#FF7201", # Blaze Orange
+    "#FF8827", # Crusta
+    "#FF9B4C", # Yellow Orange
+    "#FEB274", # Macaroni and Cheese
+    "#F0CBA9", # Mandys Pink
+    "#E2E1DD", # Westar
+    "#C2CEAA", # Coriander
+    "#A1BA77", # Olivine
+    "#8AAC55", # Chelsea Cucumber
+    "#7EA13F", # Sushi
+    "#658C16" # Vida Loca
   ),
 )
 
