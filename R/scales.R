@@ -29,7 +29,7 @@ scale_color_vibe <- function(palette, reverse = FALSE, ...) {
           length(pal), " available. Interpolating colors.",
           call. = FALSE
         )
-        scales::colorRampPalette(pal)(n)
+        grDevices::colorRampPalette(pal)(n)
       } else {
         pal[1:n]
       }
@@ -69,7 +69,7 @@ scale_fill_vibe <- function(palette, reverse = FALSE, ...) {
           length(pal), " available. Interpolating colors.",
           call. = FALSE
         )
-        scales::colorRampPalette(pal)(n)
+        grDevices::colorRampPalette(pal)(n)
       } else {
         pal[1:n]
       }

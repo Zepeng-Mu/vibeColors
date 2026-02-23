@@ -35,8 +35,78 @@ vibe_palettes <- list(
     "#A1BA77", # Olivine
     "#8AAC55", # Chelsea Cucumber
     "#7EA13F", # Sushi
-    "#658C16"  # Vida Loca
-  )
+    "#658C16" # Vida Loca
+  ),
+  Crimson = c(
+    "#ffc3c7", # 50
+    "#ffabb0", # 100
+    "#ff949a", # 200
+    "#ff7d85", # 300
+    "#fa666f", # 400
+    "#ed5a65", # 500
+    "#bb293d", # 600
+    "#8a0017" # 700
+  ),
+  Plum = c(
+    "#ffdbff", # 50
+    "#ffc0f6", # 100
+    "#f2a5da", # 200
+    "#d68bbf", # 300
+    "#bb71a5", # 400
+    "#ad6598", # 500
+    "#854072", # 600
+    "#5e1c4e" # 700
+  ),
+  Azure = c(
+    "#b3ffff", # 50
+    "#93e0ff", # 100
+    "#75c0ff", # 200
+    "#56a2e6", # 300
+    "#3884c6", # 400
+    "#2775b6", # 500
+    "#005392", # 600
+    "#00336e" # 700
+  ),
+  Turquoise = c(
+    "#9dffff", # 50
+    "#83f3ff", # 100
+    "#6adaf0", # 200
+    "#4fc2d7", # 300
+    "#31aabf", # 400
+    "#1e9eb3", # 500
+    "#007589", # 600
+    "#004d61" # 700
+  ),
+  Emerald = c(
+    "#b7fff0", # 50
+    "#96edd0", # 100
+    "#77cdb0", # 200
+    "#57ad92", # 300
+    "#368f75", # 400
+    "#248067", # 500
+    "#005f48", # 600
+    "#00402b" # 700
+  ),
+  Sunshine = c(
+    "#fff750", # 50
+    "#ffef46", # 100
+    "#ffe83c", # 200
+    "#ffe131", # 300
+    "#ffda23", # 400
+    "#fed71a", # 500
+    "#bf9900", # 600
+    "#886d00" # 700
+  ),
+  Tangerine = c(
+    "#ffd282", # 50
+    "#ffbf6f", # 100
+    "#ffac5b", # 200
+    "#ff9a47", # 300
+    "#ff8730", # 400
+    "#fa7e23", # 500
+    "#c44d00", # 600
+    "#903e00" # 700
+  ),
 )
 
 #' Get a Vibe Color Palette
@@ -78,7 +148,7 @@ vibe_palette <- function(name, n = NULL, reverse = FALSE) {
 
   # Interpolate if n is specified and different from palette length
   if (!is.null(n) && n != length(pal)) {
-    pal <- scales::colorRampPalette(pal)(n)
+    pal <- grDevices::colorRampPalette(pal)(n)
   }
 
   pal
