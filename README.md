@@ -34,16 +34,6 @@ ggplot(mtcars, aes(wt, mpg, color = hp)) +
   scale_color_vibe_c("palette_name")
 ```
 
-## Adding New Palettes
-
-Palettes can be added to the `vibe_palettes` list in `R/palettes.R`. Each palette should be a named character vector of hex color codes:
-
-```r
-vibe_palettes <- list(
-  my_palette = c("#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7")
-)
-```
-
 ## License
 
 This package is licensed under the MIT License.
