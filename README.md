@@ -11,7 +11,7 @@ You can install the development version of vibeColors from GitHub with:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("yourusername/vibeColors")
+devtools::install_github("Zepeng-Mu/vibeColors")
 ```
 
 ## Usage
