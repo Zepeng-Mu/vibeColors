@@ -6,8 +6,9 @@
 #' @format A named list of color palettes, where each palette is a
 #'   character vector of hex color codes.
 #'
-#' @keywords internal
-"vibe_palettes"
+#' @name vibe_palettes
+#' @keywords datasets
+NULL
 
 # Initialize empty palette list
 # This will be populated with actual palettes later
@@ -105,7 +106,7 @@ vibe_palettes <- list(
     "#ff7d85", # 300
     "#fa666f", # 400
     "#ed5a65", # 500
-    "#bb293d", # 600
+    "#bb293d" # 600
   ),
   AzurePlum = c(
     "#005392", # 600
@@ -118,7 +119,7 @@ vibe_palettes <- list(
     "#d68bbf", # 300
     "#bb71a5", # 400
     "#ad6598", # 500
-    "#854072", # 600
+    "#854072" # 600
   ),
   Avedon = c(
     "#FF7201", # Blaze Orange
@@ -132,7 +133,7 @@ vibe_palettes <- list(
     "#8AAC55", # Chelsea Cucumber
     "#7EA13F", # Sushi
     "#658C16" # Vida Loca
-  ),
+  )
 )
 
 #' Get a Vibe Color Palette
@@ -192,4 +193,95 @@ vibe_palette <- function(name, n = NULL, reverse = FALSE) {
 #' list_vibe_palettes()
 list_vibe_palettes <- function() {
   names(vibe_palettes)
+}
+
+#' View Vibe Color Palettes
+#'
+#' Generate a visualization of all available color palettes (or selected ones)
+#' with colored tiles showing the hex codes.
+#'
+#' @param palette Optional character vector of palette names to display.
+#'   If `NULL` (default), all available palettes are shown.
+#'
+#' @return A ggplot2 plot object displaying the color palettes.
+#'
+#' @export
+#' @examples
+#' # View all palettes
+#' \dontrun{
+#' view_vibe_palettes()
+#' }
+#'
+#' # View specific palettes
+#' \dontrun{
+#' view_vibe_palettes(c("Crimson", "Azure"))
+#' }
+view_vibe_palettes <- function(palette = NULL) {
+  # Validate input
+  if (!is.null(palette)) {
+    palette <- as.character(palette)
+    invalid <- setdiff(palette, names(vibe_palettes))
+    if (length(invalid) > 0) {
+      stop(
+        "Unknown palette(s): ", paste(invalid, collapse = ", "),
+        ". Available palettes: ", paste(names(vibe_palettes), collapse = ", "),
+        call. = FALSE
+      )
+    }
+    palettes_to_show <- palette
+  } else {
+    palettes_to_show <- names(vibe_palettes)
+  }
+
+  # Build data frame for plotting
+  df_list <- lapply(palettes_to_show, function(pal_name) {
+    colors <- vibe_palettes[[pal_name]]
+    data.frame(
+      palette = pal_name,
+      color_index = seq_along(colors),
+      hex = colors,
+      stringsAsFactors = FALSE
+    )
+  })
+  df <- do.call(rbind, df_list)
+  df$palette <- factor(df$palette, levels = palettes_to_show)
+
+  # Create the plot
+  p <- ggplot2::ggplot(df, ggplot2::aes(x = color_index, y = palette)) +
+    ggplot2::geom_tile(
+      ggplot2::aes(fill = hex),
+      color = "white",
+      linewidth = 0.5
+    ) +
+    ggplot2::geom_text(
+      ggplot2::aes(label = hex),
+      color = "black",
+      size = 3,
+      fontface = "plain"
+    ) +
+    ggplot2::scale_fill_identity() +
+    ggplot2::scale_x_continuous(
+      breaks = NULL,
+      expand = c(0, 0)
+    ) +
+    ggplot2::scale_y_discrete(
+      expand = c(0, 0)
+    ) +
+    ggplot2::labs(
+      x = NULL,
+      y = NULL,
+      title = "Vibe Color Palettes",
+      subtitle = paste0("Showing ", length(palettes_to_show), " palette(s)")
+    ) +
+    ggplot2::theme_minimal(base_size = 11) +
+    ggplot2::theme(
+      panel.grid = ggplot2::element_blank(),
+      axis.text.y = ggplot2::element_text(face = "bold"),
+      axis.ticks = ggplot2::element_blank(),
+      plot.title = ggplot2::element_text(face = "bold", hjust = 0.5),
+      plot.subtitle = ggplot2::element_text(hjust = 0.5, margin = ggplot2::margin(b = 15)),
+      plot.margin = ggplot2::margin(15, 15, 15, 15)
+    )
+
+  p
 }

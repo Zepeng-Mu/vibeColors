@@ -6,18 +6,18 @@
 \alias{vibeColors-package}
 \title{vibeColors: Color Palettes for ggplot2}
 \description{
-A collection of color palettes designed for use with ggplot2.
-Provides discrete and continuous color scales that integrate seamlessly
-with the ggplot2 plotting system.
+A collection of color palettes designed for use with ggplot2. Provides discrete and continuous color scales that integrate seamlessly with the ggplot2 plotting system.
 }
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://yourusername.github.io/vibeColors}
   \item Report bugs at \url{https://github.com/yourusername/vibeColors/issues}
 }
+
 }
 \author{
-\strong{Maintainer}: Your Name \email{your.email@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Zepeng Mu \email{zmu@broadinstitute.org}
 
 }
 \keyword{internal}
