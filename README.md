@@ -34,6 +34,14 @@ ggplot(mtcars, aes(wt, mpg, color = hp)) +
   scale_color_vibe_c("palette_name")
 ```
 
+## Vibe Palettes
+
+```r
+view_vibe_palettes()
+```
+
+![](colors.png)
+
 ## License
 
 This package is licensed under the MIT License.
