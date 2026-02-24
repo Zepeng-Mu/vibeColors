@@ -29,7 +29,6 @@ scale_color_vibe <- function(palette, reverse = FALSE, saturation = 1, ...) {
 
   ggplot2::discrete_scale(
     aesthetics = "colour",
-    scale_name = "vibe",
     palette = function(n) {
       if (n > length(pal)) {
         warning(
@@ -73,7 +72,6 @@ scale_fill_vibe <- function(palette, reverse = FALSE, saturation = 1, ...) {
 
   ggplot2::discrete_scale(
     aesthetics = "fill",
-    scale_name = "vibe",
     palette = function(n) {
       if (n > length(pal)) {
         warning(
@@ -165,31 +163,20 @@ scale_fill_vibe_c <- function(palette, reverse = FALSE, saturation = 1, ...) {
   # Clamp saturation to reasonable range
   saturation <- max(0, min(2, saturation))
 
-  # Convert hex to RGB then to HSV
-  rgb_colors <- grDevices::col2rgb(colors, alpha = TRUE) / 255
+  # Convert hex to RGB [0, 1]
+  rgb_mat <- grDevices::col2rgb(colors, alpha = TRUE) / 255
 
-  # Convert to HSV
-  hsv_colors <- apply(rgb_colors, 2, function(x) {
-    grDevices::rgb2hsv(x[1:3])
-  })
+  # Convert to HSV (need maxColorValue = 1 since our RGB is in [0, 1])
+  hsv_mat <- grDevices::rgb2hsv(rgb_mat[1:3, , drop = FALSE], maxColorValue = 1)
 
   # Adjust saturation channel (S in HSV)
-  hsv_colors[2, ] <- hsv_colors[2, ] * saturation
-  hsv_colors[2, ] <- pmin(1, pmax(0, hsv_colors[2, ]))  # clamp to [0, 1]
+  hsv_mat[2, ] <- hsv_mat[2, ] * saturation
+  hsv_mat[2, ] <- pmin(1, pmax(0, hsv_mat[2, ]))  # clamp to [0, 1]
 
-  # Convert back to hex
-  adjusted_colors <- apply(hsv_colors, 2, function(hsv) {
-    grDevices::hsv(hsv[1], hsv[2], hsv[3])
-  })
-
-  # Preserve alpha if present
-  if (nrow(rgb_colors) == 4) {
-    alpha_vals <- rgb_colors[4, ]
-    adjusted_colors <- grDevices::rgb(
-      grDevices::col2rgb(adjusted_colors) / 255,
-      alpha = alpha_vals
-    )
-  }
+  # Convert back to hex using hsv()
+  adjusted_colors <- mapply(function(h, s, v) {
+    grDevices::hsv(h, s, v)
+  }, hsv_mat[1, ], hsv_mat[2, ], hsv_mat[3, ])
 
   adjusted_colors
 }
