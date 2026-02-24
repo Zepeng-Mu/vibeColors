@@ -29,6 +29,7 @@ scale_color_vibe <- function(palette, reverse = FALSE, saturation = 1, ...) {
 
   ggplot2::discrete_scale(
     aesthetics = "colour",
+    scale_name = "vibe",
     palette = function(n) {
       if (n > length(pal)) {
         warning(
@@ -72,6 +73,7 @@ scale_fill_vibe <- function(palette, reverse = FALSE, saturation = 1, ...) {
 
   ggplot2::discrete_scale(
     aesthetics = "fill",
+    scale_name = "vibe",
     palette = function(n) {
       if (n > length(pal)) {
         warning(
