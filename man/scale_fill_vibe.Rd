@@ -4,13 +4,17 @@
 \alias{scale_fill_vibe}
 \title{Discrete Fill Scale for Vibe Palettes}
 \usage{
-scale_fill_vibe(palette, reverse = FALSE, ...)
+scale_fill_vibe(palette, reverse = FALSE, saturation = 1, ...)
 }
 \arguments{
 \item{palette}{The name of the palette to use. Use \code{list_vibe_palettes()}
 to see available options.}
 
 \item{reverse}{Logical. Should the palette be reversed? Default is \code{FALSE}.}
+
+\item{saturation}{Numeric value between 0 and 2 to adjust color saturation.
+Values less than 1 desaturate colors (0 = grayscale), values greater than 1
+increase saturation. Default is 1 (no adjustment).}
 
 \item{...}{Additional arguments passed to \code{ggplot2::discrete_scale()}.}
 }

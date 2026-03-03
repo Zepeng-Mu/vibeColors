@@ -14,86 +14,87 @@ NULL
 # This will be populated with actual palettes later
 vibe_palettes <- list(
   CBsafe1 = c(
-    "#0E69B7", # Denim
-    "#D00E12", # Monza
-    "#00B4A6", # Persian Green
-    "#F0E441", # Starship
-    "#57258C", # Daisy Bush
-    "#FE5400", # International Orange
-    "#57B4E9", # Picton Blue
-    "#FFAF01", # Yellow Sea
-    "#AFAFAF", # Silver Chalice
-    "#000000" # Black
+    "1" = "#0E69B7", # Denim
+    "2" = "#D00E12", # Monza
+    "3" = "#00B4A6", # Persian Green
+    "4" = "#F0E441", # Starship
+    "5" = "#57258C", # Daisy Bush
+    "6" = "#FE5400", # International Orange
+    "7" = "#57B4E9", # Picton Blue
+    "8" = "#FFAF01", # Yellow Sea
+    "9" = "#CB79A7", # Raspberry Rose
+    "10" = "#AFAFAF", # Silver Chalice
+    "11" = "#000000" # Black
   ),
   Crimson = c(
-    "#ffc3c7", # 50
-    "#ffabb0", # 100
-    "#ff949a", # 200
-    "#ff7d85", # 300
-    "#fa666f", # 400
-    "#ed5a65", # 500
-    "#bb293d", # 600
-    "#8a0017" # 700
+    "50" = "#ffc3c7",
+    "100" = "#ffabb0",
+    "200" = "#ff949a",
+    "300" = "#ff7d85",
+    "400" = "#fa666f",
+    "500" = "#ed5a65",
+    "600" = "#bb293d",
+    "700" = "#8a0017"
   ),
   Plum = c(
-    "#ffdbff", # 50
-    "#ffc0f6", # 100
-    "#f2a5da", # 200
-    "#d68bbf", # 300
-    "#bb71a5", # 400
-    "#ad6598", # 500
-    "#854072", # 600
-    "#5e1c4e" # 700
+    "50" = "#ffdbff",
+    "100" = "#ffc0f6",
+    "200" = "#f2a5da",
+    "300" = "#d68bbf",
+    "400" = "#bb71a5",
+    "500" = "#ad6598",
+    "600" = "#854072",
+    "700" = "#5e1c4e"
   ),
   Azure = c(
-    "#b3ffff", # 50
-    "#93e0ff", # 100
-    "#75c0ff", # 200
-    "#56a2e6", # 300
-    "#3884c6", # 400
-    "#2775b6", # 500
-    "#005392", # 600
-    "#00336e" # 700
+    "50" = "#b3ffff",
+    "100" = "#93e0ff",
+    "200" = "#75c0ff",
+    "300" = "#56a2e6",
+    "400" = "#3884c6",
+    "500" = "#2775b6",
+    "600" = "#005392",
+    "700" = "#00336e"
   ),
   Turquoise = c(
-    "#9dffff", # 50
-    "#83f3ff", # 100
-    "#6adaf0", # 200
-    "#4fc2d7", # 300
-    "#31aabf", # 400
-    "#1e9eb3", # 500
-    "#007589", # 600
-    "#004d61" # 700
+    "50" = "#9dffff",
+    "100" = "#83f3ff",
+    "200" = "#6adaf0",
+    "300" = "#4fc2d7",
+    "400" = "#31aabf",
+    "500" = "#1e9eb3",
+    "600" = "#007589",
+    "700" = "#004d61"
   ),
   Emerald = c(
-    "#b7fff0", # 50
-    "#96edd0", # 100
-    "#77cdb0", # 200
-    "#57ad92", # 300
-    "#368f75", # 400
-    "#248067", # 500
-    "#005f48", # 600
-    "#00402b" # 700
+    "50" = "#b7fff0",
+    "100" = "#96edd0",
+    "200" = "#77cdb0",
+    "300" = "#57ad92",
+    "400" = "#368f75",
+    "500" = "#248067",
+    "600" = "#005f48",
+    "700" = "#00402b"
   ),
   Sunshine = c(
-    "#fff750", # 50
-    "#ffef46", # 100
-    "#ffe83c", # 200
-    "#ffe131", # 300
-    "#ffda23", # 400
-    "#fed71a", # 500
-    "#bf9900", # 600
-    "#886d00" # 700
+    "50" = "#fff750",
+    "100" = "#ffef46",
+    "200" = "#ffe83c",
+    "300" = "#ffe131",
+    "400" = "#ffda23",
+    "500" = "#fed71a",
+    "600" = "#bf9900",
+    "700" = "#886d00"
   ),
   Tangerine = c(
-    "#ffd282", # 50
-    "#ffbf6f", # 100
-    "#ffac5b", # 200
-    "#ff9a47", # 300
-    "#ff8730", # 400
-    "#fa7e23", # 500
-    "#c44d00", # 600
-    "#903e00" # 700
+    "50" = "#ffd282",
+    "100" = "#ffbf6f",
+    "200" = "#ffac5b",
+    "300" = "#ff9a47",
+    "400" = "#ff8730",
+    "500" = "#fa7e23",
+    "600" = "#c44d00",
+    "700" = "#903e00"
   ),
   AzureCrimson = c(
     "#005392", # 600
@@ -161,17 +162,17 @@ vibe_palettes <- list(
     "#bb293d" # 600
   ),
   Avedon = c(
-    "#FF7201", # Blaze Orange
-    "#FF8827", # Crusta
-    "#FF9B4C", # Yellow Orange
-    "#FEB274", # Macaroni and Cheese
-    "#F0CBA9", # Mandys Pink
-    "#E2E1DD", # Westar
-    "#C2CEAA", # Coriander
-    "#A1BA77", # Olivine
-    "#8AAC55", # Chelsea Cucumber
-    "#7EA13F", # Sushi
-    "#658C16" # Vida Loca
+    "1" = "#FF7201", # Blaze Orange
+    "2" = "#FF8827", # Crusta
+    "3" = "#FF9B4C", # Yellow Orange
+    "4" = "#FEB274", # Macaroni and Cheese
+    "5" = "#F0CBA9", # Mandys Pink
+    "6" = "#E2E1DD", # Westar
+    "7" = "#C2CEAA", # Coriander
+    "8" = "#A1BA77", # Olivine
+    "9" = "#8AAC55", # Chelsea Cucumber
+    "10" = "#7EA13F", # Sushi
+    "11" = "#658C16" # Vida Loca
   )
 )
 
@@ -218,6 +219,83 @@ vibe_palette <- function(name, n = NULL, reverse = FALSE) {
   }
 
   pal
+}
+
+#' Get a Specific Vibe Color
+#'
+#' Retrieve a specific color by its palette and name/weight.
+#' For example, `vibe_color("Azure100")` returns the color from the
+#' Azure palette with weight 100.
+#'
+#' Diverging palettes (like AzureCrimson) are combinations of gradient
+#' palettes and do not have specific named weights. If you try to extract
+#' a color from a diverging palette, this function will throw an error
+#' suggesting to use the relevant gradient palettes instead.
+#'
+#' @param color_names A character vector of color names (e.g., "Azure100", "Avedon1").
+#'
+#' @return A character vector of hex color codes.
+#'
+#' @export
+#' @examples
+#' # Get specific colors
+#' # vibe_color("Azure100")
+#' # vibe_color(c("Azure500", "Avedon1"))
+vibe_color <- function(color_names) {
+  diverging_palettes <- c(
+    "AzureCrimson", "AzurePlum", "TurquoiseTangerine",
+    "EmeraldTangerine", "EmeraldCrimson"
+  )
+  
+  sapply(color_names, function(color_name) {
+    # Check if user is asking for a diverging palette
+    for (div_pal in diverging_palettes) {
+      if (startsWith(color_name, div_pal)) {
+        stop(
+          "Cannot extract specific weights from diverging palette '", div_pal, "'. ",
+          "Diverging palettes are combinations of gradient palettes. ",
+          "Please use the relevant base gradient palettes instead.",
+          call. = FALSE
+        )
+      }
+    }
+    
+    # Try to find the palette by looking for the longest matching palette name
+    # at the start of the string
+    pal_names <- names(vibe_palettes)
+    pal_names <- pal_names[order(nchar(pal_names), decreasing = TRUE)]
+    
+    matched_pal <- NULL
+    for (pal in pal_names) {
+      if (startsWith(color_name, pal)) {
+        matched_pal <- pal
+        break
+      }
+    }
+    
+    if (is.null(matched_pal)) {
+      stop("Could not identify palette in color name: '", color_name, "'", call. = FALSE)
+    }
+    
+    # Extract the weight part
+    weight <- substr(color_name, nchar(matched_pal) + 1, nchar(color_name))
+    
+    if (weight == "") {
+      stop("No weight/index specified for palette '", matched_pal, "'. Did you mean '", matched_pal, "1' or '", matched_pal, "100'?", call. = FALSE)
+    }
+    
+    pal_colors <- vibe_palettes[[matched_pal]]
+    
+    if (!weight %in% names(pal_colors)) {
+      stop(
+        "Weight/index '", weight, "' not found in palette '", matched_pal, "'. ",
+        "Available weights: ", paste(names(pal_colors), collapse = ", "),
+        call. = FALSE
+      )
+    }
+    
+    unname(pal_colors[weight])
+  }, USE.NAMES = FALSE)
 }
 
 #' List Available Palettes
