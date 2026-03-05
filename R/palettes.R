@@ -233,6 +233,9 @@ vibe_palette <- function(name, n = NULL, reverse = FALSE) {
     pal <- grDevices::colorRampPalette(pal)(n)
   }
 
+  # Remove element names to avoid issues with certain functions
+  pal <- unname(pal)
+
   pal
 }
 
@@ -261,7 +264,7 @@ vibe_color <- function(color_names) {
     "AzureCrimson", "AzurePlum", "TurquoiseTangerine",
     "EmeraldTangerine", "EmeraldCrimson"
   )
-  
+
   sapply(color_names, function(color_name) {
     # Check if user is asking for a diverging palette
     for (div_pal in diverging_palettes) {
@@ -274,12 +277,12 @@ vibe_color <- function(color_names) {
         )
       }
     }
-    
+
     # Try to find the palette by looking for the longest matching palette name
     # at the start of the string
     pal_names <- names(vibe_palettes)
     pal_names <- pal_names[order(nchar(pal_names), decreasing = TRUE)]
-    
+
     matched_pal <- NULL
     for (pal in pal_names) {
       if (startsWith(color_name, pal)) {
@@ -287,20 +290,20 @@ vibe_color <- function(color_names) {
         break
       }
     }
-    
+
     if (is.null(matched_pal)) {
       stop("Could not identify palette in color name: '", color_name, "'", call. = FALSE)
     }
-    
+
     # Extract the weight part
     weight <- substr(color_name, nchar(matched_pal) + 1, nchar(color_name))
-    
+
     if (weight == "") {
       stop("No weight/index specified for palette '", matched_pal, "'. Did you mean '", matched_pal, "1' or '", matched_pal, "100'?", call. = FALSE)
     }
-    
+
     pal_colors <- vibe_palettes[[matched_pal]]
-    
+
     if (!weight %in% names(pal_colors)) {
       stop(
         "Weight/index '", weight, "' not found in palette '", matched_pal, "'. ",
@@ -308,7 +311,7 @@ vibe_color <- function(color_names) {
         call. = FALSE
       )
     }
-    
+
     unname(pal_colors[weight])
   }, USE.NAMES = FALSE)
 }
