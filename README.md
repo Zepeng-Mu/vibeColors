@@ -45,3 +45,7 @@ view_vibe_palettes()
 ## License
 
 This package is licensed under the MIT License.
+
+## Acknowledgements
+
+Some color palettes in this package are inspired by or adapted from [MoMAColors](https://github.com/BlakeRMills/MoMAColors).
