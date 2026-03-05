@@ -173,6 +173,21 @@ vibe_palettes <- list(
     "9" = "#8AAC55", # Chelsea Cucumber
     "10" = "#7EA13F", # Sushi
     "11" = "#658C16" # Vida Loca
+  ),
+  Benedict = c(
+    "1" = "#0A2F90", # Torea Bay
+    "2" = "#315FD1", # Mariner
+    "3" = "#5A97EA", # Cornflower Blue
+    "4" = "#98C4F2", # Jordy Blue
+    "5" = "#C1DDFC", # French Pass
+    "6" = "#E9F4FF", # Solitude
+    "7" = "#FFFFFF", # Black Haze
+    "8" = "#FFE0E9", # Pale Rose
+    "9" = "#FFB1C9", # Carnation Pink
+    "10" = "#FF81AC", # Tickle Me Pink
+    "11" = "#EB427B", # French Rose
+    "12" = "#CA2360", # Maroon Flush
+    "13" = "#A70038" # Burgundy
   )
 )
 
