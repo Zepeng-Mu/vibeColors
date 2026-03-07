@@ -1,9 +1,12 @@
 # vibeColors
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/Zepeng-Mu/vibeColors/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Zepeng-Mu/vibeColors/actions/workflows/R-CMD-check.yaml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
+
+> [!Note]
+> This README is drafted by AI and verified by human authors. Please report any issues.
 
 A collection of aesthetically pleasing color palettes designed for data visualization with ggplot2. Provides discrete and continuous color scales that integrate seamlessly with the ggplot2 plotting system, along with utility functions for working with colors.
 
