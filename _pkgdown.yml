@@ -65,7 +65,7 @@ navbar:
   components:
     github:
       icon: fab fa-github fa-lg
-      href: https://github.com/yourusername/vibeColors
+      href: https://github.com/Zepeng-Mu/vibeColors
 
 development:
   mode: auto
