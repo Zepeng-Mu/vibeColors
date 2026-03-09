@@ -1,14 +1,13 @@
 # pkgdown configuration file
 
+destination: docs
+
 url: https://Zepeng-Mu.github.io/vibeColors/
 
 template:
   package: vibeColors
   bootstrap: 5
-  bslib:
-    primary: "#6C5CE7"
-    navbar-bg: "#6C5CE7"
-    font_scale: 1
+  bootswatch: journal
 
 home:
   title: vibeColors
@@ -46,8 +45,7 @@ articles:
   - title: Guides and Tutorials
     desc: Learn how to use vibeColors in your projects
     contents:
-    - vibeColors
-    - creating-palettes
+      - vibeColors
 
 authors:
   title: Authors
