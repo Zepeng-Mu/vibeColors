@@ -51,9 +51,9 @@
 </h1></div>
 <!-- badges: start -->
 
-<blockquote>
-<p>[!Note] This README is drafted by AI and verified by human authors. Please report any issues.</p>
-</blockquote>
+<div class="alert alert-info">
+<p><strong>Note:</strong> This README is drafted by AI and verified by human authors. Please report any issues.</p>
+</div>
 <p>A collection of aesthetically pleasing color palettes designed for data visualization with ggplot2. Provides discrete and continuous color scales that integrate seamlessly with the ggplot2 plotting system, along with utility functions for working with colors.</p>
 <div class="section level2">
 <h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
@@ -92,8 +92,11 @@
 <span><span class="fu"><a href="reference/list_vibe_palettes.html">list_vibe_palettes</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="available-palettes">Available Palettes<a class="anchor" aria-label="anchor" href="#available-palettes"></a>
+<h2 id="palette-preview">Palette Preview<a class="anchor" aria-label="anchor" href="#palette-preview"></a>
 </h2>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/view_vibe_palettes.html">view_vibe_palettes</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/colors.png"></p>
 <div class="section level3">
 <h3 id="sequential-palettes-gradient">Sequential Palettes (Gradient)<a class="anchor" aria-label="anchor" href="#sequential-palettes-gradient"></a>
 </h3>
@@ -208,14 +211,14 @@
 <div class="section level3">
 <h3 id="list-all-palettes">List All Palettes<a class="anchor" aria-label="anchor" href="#list-all-palettes"></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># View all available palettes</span></span>
 <span><span class="fu"><a href="reference/list_vibe_palettes.html">list_vibe_palettes</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="visualize-palettes">Visualize Palettes<a class="anchor" aria-label="anchor" href="#visualize-palettes"></a>
 </h3>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># View all palettes</span></span>
 <span><span class="fu"><a href="reference/view_vibe_palettes.html">view_vibe_palettes</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -226,7 +229,7 @@
 <h3 id="discrete-scales-categorical-data">Discrete Scales (Categorical Data)<a class="anchor" aria-label="anchor" href="#discrete-scales-categorical-data"></a>
 </h3>
 <p>Use discrete scales when mapping categorical variables:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Discrete fill scale</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -243,7 +246,7 @@
 <h3 id="continuous-scales-numeric-data">Continuous Scales (Numeric Data)<a class="anchor" aria-label="anchor" href="#continuous-scales-numeric-data"></a>
 </h3>
 <p>Use continuous scales when mapping numeric variables:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Continuous color scale</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">wt</span>, <span class="va">mpg</span>, color <span class="op">=</span> <span class="va">hp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
@@ -260,7 +263,7 @@
 <h3 id="adjusting-palette-options">Adjusting Palette Options<a class="anchor" aria-label="anchor" href="#adjusting-palette-options"></a>
 </h3>
 <p>All scale functions support additional customization:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Reverse palette order</span></span>
 <span><span class="fu"><a href="reference/scale_fill_vibe.html">scale_fill_vibe</a></span><span class="op">(</span><span class="st">"Crimson"</span>, reverse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
@@ -272,7 +275,7 @@
 <h3 id="using-individual-colors">Using Individual Colors<a class="anchor" aria-label="anchor" href="#using-individual-colors"></a>
 </h3>
 <p>You can extract specific colors from palettes:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Get a specific color (palette + weight)</span></span>
 <span><span class="fu"><a href="reference/vibe_color.html">vibe_color</a></span><span class="op">(</span><span class="st">"Azure500"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/vibe_color.html">vibe_color</a></span><span class="op">(</span><span class="st">"Crimson100"</span><span class="op">)</span></span>
@@ -283,7 +286,7 @@
 <div class="section level3">
 <h3 id="get-a-palette">Get a Palette<a class="anchor" aria-label="anchor" href="#get-a-palette"></a>
 </h3>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Get all colors from a palette</span></span>
 <span><span class="fu"><a href="reference/vibe_palette.html">vibe_palette</a></span><span class="op">(</span><span class="st">"Avedon"</span><span class="op">)</span></span>
 <span></span>
@@ -293,13 +296,6 @@
 <span><span class="co"># Reverse the palette</span></span>
 <span><span class="fu"><a href="reference/vibe_palette.html">vibe_palette</a></span><span class="op">(</span><span class="st">"Crimson"</span>, reverse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
-</div>
-<div class="section level2">
-<h2 id="palette-preview">Palette Preview<a class="anchor" aria-label="anchor" href="#palette-preview"></a>
-</h2>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/view_vibe_palettes.html">view_vibe_palettes</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="colors.png"></p>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
