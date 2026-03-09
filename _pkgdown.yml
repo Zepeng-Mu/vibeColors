@@ -12,9 +12,7 @@ template:
 home:
   title: vibeColors
   description: >
-    A collection of color palettes designed for use with ggplot2.
-    Provides discrete and continuous color scales that integrate seamlessly
-    with the ggplot2 plotting system.
+    A collection of color palettes designed for use with ggplot2 and beyond.
   links:
     - text: GitHub
       href: https://github.com/Zepeng-Mu/vibeColors
