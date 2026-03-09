@@ -21,9 +21,5 @@ src/*.o
 src/*.so
 src/*.dll
 
-# Documentation
-docs/
-pkgdown/
-
 # Test coverage
 codecov/
