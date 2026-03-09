@@ -1,6 +1,6 @@
 # pkgdown configuration file
 
-url: https://yourusername.github.io/vibeColors/
+url: https://Zepeng-Mu.github.io/vibeColors/
 
 template:
   package: vibeColors
@@ -18,32 +18,36 @@ home:
     with the ggplot2 plotting system.
   links:
     - text: GitHub
-      href: https://github.com/yourusername/vibeColors
+      href: https://github.com/Zepeng-Mu/vibeColors
     - text: Report a bug
-      href: https://github.com/yourusername/vibeColors/issues
+      href: https://github.com/Zepeng-Mu/vibeColors/issues
 
 reference:
-  title: Functions
-  desc: >
-    Core functions for working with color palettes and ggplot2 scales.
-  contents:
-    - vibe_palette
-    - list_vibe_palettes
-    - scale_color_vibe
-    - scale_fill_vibe
-    - scale_color_vibe_c
-    - scale_fill_vibe_c
-    - vibe_palettes
+  - title: "Palette Access"
+    desc: "Functions to retrieve and list palettes"
+    contents:
+      - vibe_palette
+      - vibe_color
+      - list_vibe_palettes
+      - view_vibe_palettes
+  - title: "ggplot2 Scales"
+    desc: "Discrete and continuous color scales for ggplot2"
+    contents:
+      - scale_color_vibe
+      - scale_fill_vibe
+      - scale_color_vibe_c
+      - scale_fill_vibe_c
+  - title: "Data"
+    desc: "Palette data objects"
+    contents:
+      - vibe_palettes
 
 articles:
-  title: Articles
-  desc: >
-    Guides and tutorials for using vibeColors.
-  contents:
-    - title: Getting Started
-      href: articles/vibeColors.html
-    - title: Creating Palettes
-      href: articles/creating-palettes.html
+  - title: Guides and Tutorials
+    desc: Learn how to use vibeColors in your projects
+    contents:
+    - vibeColors
+    - creating-palettes
 
 authors:
   title: Authors
@@ -60,6 +64,7 @@ navbar:
       - home
       - reference
       - articles
+      - news
     right:
       - github
   components:

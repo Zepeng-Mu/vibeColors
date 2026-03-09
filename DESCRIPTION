@@ -9,8 +9,8 @@ Description: A collection of color palettes designed for use with ggplot2.
     Provides discrete and continuous color scales that integrate seamlessly
     with the ggplot2 plotting system.
 License: MIT + file LICENSE
-URL: https://yourusername.github.io/vibeColors
-BugReports: https://github.com/yourusername/vibeColors/issues
+URL: https://Zepeng-Mu.github.io/vibeColors
+BugReports: https://github.com/Zepeng-Mu/vibeColors/issues
 Depends: R (>= 3.5.0)
 Imports:
     ggplot2 (>= 3.0.0),

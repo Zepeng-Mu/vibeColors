@@ -11,8 +11,8 @@ A collection of color palettes designed for use with ggplot2. Provides discrete 
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://yourusername.github.io/vibeColors}
-  \item Report bugs at \url{https://github.com/yourusername/vibeColors/issues}
+  \item \url{https://Zepeng-Mu.github.io/vibeColors}
+  \item Report bugs at \url{https://github.com/Zepeng-Mu/vibeColors/issues}
 }
 
 }
