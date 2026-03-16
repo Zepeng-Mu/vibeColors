@@ -19,7 +19,7 @@ vibe_palettes <- list(
     "3" = "#FFF900", # Yellow
     "4" = "#8AC000", # Pistachio
     "5" = "#39B3E4", # Picton Blue
-    "6" = "#9C70CB"  # Amethyst
+    "6" = "#9C70CB" # Amethyst
   ),
   CBsafe1 = c(
     "1" = "#0E69B7", # Denim
@@ -222,7 +222,9 @@ vibe_palette <- function(name = "Default", n = NULL, reverse = FALSE) {
   # Check if palette exists
   if (!name %in% names(vibe_palettes)) {
     stop(
-      "Palette '", name, "' not found. ",
+      "Palette '",
+      name,
+      "' not found. ",
       "Available palettes: ",
       paste(names(vibe_palettes), collapse = ", "),
       call. = FALSE
@@ -270,59 +272,87 @@ vibe_palette <- function(name = "Default", n = NULL, reverse = FALSE) {
 #' # vibe_color(c("Azure500", "Avedon1"))
 vibe_color <- function(color_names) {
   diverging_palettes <- c(
-    "AzureCrimson", "AzurePlum", "TurquoiseTangerine",
-    "EmeraldTangerine", "EmeraldCrimson"
+    "AzureCrimson",
+    "AzurePlum",
+    "TurquoiseTangerine",
+    "EmeraldTangerine",
+    "EmeraldCrimson"
   )
 
-  sapply(color_names, function(color_name) {
-    # Check if user is asking for a diverging palette
-    for (div_pal in diverging_palettes) {
-      if (startsWith(color_name, div_pal)) {
+  sapply(
+    color_names,
+    function(color_name) {
+      # Check if user is asking for a diverging palette
+      for (div_pal in diverging_palettes) {
+        if (startsWith(color_name, div_pal)) {
+          stop(
+            "Cannot extract specific weights from diverging palette '",
+            div_pal,
+            "'. ",
+            "Diverging palettes are combinations of gradient palettes. ",
+            "Please use the relevant base gradient palettes instead.",
+            call. = FALSE
+          )
+        }
+      }
+
+      # Try to find the palette by looking for the longest matching palette name
+      # at the start of the string
+      pal_names <- names(vibe_palettes)
+      pal_names <- pal_names[order(nchar(pal_names), decreasing = TRUE)]
+
+      matched_pal <- NULL
+      for (pal in pal_names) {
+        if (startsWith(color_name, pal)) {
+          matched_pal <- pal
+          break
+        }
+      }
+
+      if (is.null(matched_pal)) {
         stop(
-          "Cannot extract specific weights from diverging palette '", div_pal, "'. ",
-          "Diverging palettes are combinations of gradient palettes. ",
-          "Please use the relevant base gradient palettes instead.",
+          "Could not identify palette in color name: '",
+          color_name,
+          "'",
           call. = FALSE
         )
       }
-    }
 
-    # Try to find the palette by looking for the longest matching palette name
-    # at the start of the string
-    pal_names <- names(vibe_palettes)
-    pal_names <- pal_names[order(nchar(pal_names), decreasing = TRUE)]
+      # Extract the weight part
+      weight <- substr(color_name, nchar(matched_pal) + 1, nchar(color_name))
 
-    matched_pal <- NULL
-    for (pal in pal_names) {
-      if (startsWith(color_name, pal)) {
-        matched_pal <- pal
-        break
+      if (weight == "") {
+        stop(
+          "No weight/index specified for palette '",
+          matched_pal,
+          "'. Did you mean '",
+          matched_pal,
+          "1' or '",
+          matched_pal,
+          "100'?",
+          call. = FALSE
+        )
       }
-    }
 
-    if (is.null(matched_pal)) {
-      stop("Could not identify palette in color name: '", color_name, "'", call. = FALSE)
-    }
+      pal_colors <- vibe_palettes[[matched_pal]]
 
-    # Extract the weight part
-    weight <- substr(color_name, nchar(matched_pal) + 1, nchar(color_name))
+      if (!weight %in% names(pal_colors)) {
+        stop(
+          "Weight/index '",
+          weight,
+          "' not found in palette '",
+          matched_pal,
+          "'. ",
+          "Available weights: ",
+          paste(names(pal_colors), collapse = ", "),
+          call. = FALSE
+        )
+      }
 
-    if (weight == "") {
-      stop("No weight/index specified for palette '", matched_pal, "'. Did you mean '", matched_pal, "1' or '", matched_pal, "100'?", call. = FALSE)
-    }
-
-    pal_colors <- vibe_palettes[[matched_pal]]
-
-    if (!weight %in% names(pal_colors)) {
-      stop(
-        "Weight/index '", weight, "' not found in palette '", matched_pal, "'. ",
-        "Available weights: ", paste(names(pal_colors), collapse = ", "),
-        call. = FALSE
-      )
-    }
-
-    unname(pal_colors[weight])
-  }, USE.NAMES = FALSE)
+      unname(pal_colors[weight])
+    },
+    USE.NAMES = FALSE
+  )
 }
 
 #' List Available Palettes
@@ -367,8 +397,10 @@ view_vibe_palettes <- function(palette = NULL) {
     invalid <- setdiff(palette, names(vibe_palettes))
     if (length(invalid) > 0) {
       stop(
-        "Unknown palette(s): ", paste(invalid, collapse = ", "),
-        ". Available palettes: ", paste(names(vibe_palettes), collapse = ", "),
+        "Unknown palette(s): ",
+        paste(invalid, collapse = ", "),
+        ". Available palettes: ",
+        paste(names(vibe_palettes), collapse = ", "),
         call. = FALSE
       )
     }
@@ -423,7 +455,10 @@ view_vibe_palettes <- function(palette = NULL) {
       axis.text.y = ggplot2::element_text(face = "bold"),
       axis.ticks = ggplot2::element_blank(),
       plot.title = ggplot2::element_text(face = "bold", hjust = 0.5),
-      plot.subtitle = ggplot2::element_text(hjust = 0.5, margin = ggplot2::margin(b = 15)),
+      plot.subtitle = ggplot2::element_text(
+        hjust = 0.5,
+        margin = ggplot2::margin(b = 15)
+      ),
       plot.margin = ggplot2::margin(15, 15, 15, 15)
     )
 

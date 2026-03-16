@@ -26,7 +26,12 @@
 #' # # Adjust saturation
 #' # scale_color_vibe("Crimson", saturation = 0.5)  # desaturated
 #' # scale_color_vibe("Crimson", saturation = 1.5)  # more saturated
-scale_color_vibe <- function(palette = "Default", reverse = FALSE, saturation = 1, ...) {
+scale_color_vibe <- function(
+  palette = "Default",
+  reverse = FALSE,
+  saturation = 1,
+  ...
+) {
   pal <- vibe_palette(name = palette, reverse = reverse)
   pal <- .adjust_saturation(pal, saturation)
 
@@ -35,8 +40,11 @@ scale_color_vibe <- function(palette = "Default", reverse = FALSE, saturation = 
     palette = function(n) {
       if (n > length(pal)) {
         warning(
-          "Insufficient values in palette. ", n, " values needed, but only ",
-          length(pal), " available. Interpolating colors.",
+          "Insufficient values in palette. ",
+          n,
+          " values needed, but only ",
+          length(pal),
+          " available. Interpolating colors.",
           call. = FALSE
         )
         grDevices::colorRampPalette(pal)(n)
@@ -72,7 +80,12 @@ scale_color_vibe <- function(palette = "Default", reverse = FALSE, saturation = 
 #' #
 #' # # Use a specific palette
 #' # scale_fill_vibe("Crimson")
-scale_fill_vibe <- function(palette = "Default", reverse = FALSE, saturation = 1, ...) {
+scale_fill_vibe <- function(
+  palette = "Default",
+  reverse = FALSE,
+  saturation = 1,
+  ...
+) {
   pal <- vibe_palette(name = palette, reverse = reverse)
   pal <- .adjust_saturation(pal, saturation)
 
@@ -81,8 +94,11 @@ scale_fill_vibe <- function(palette = "Default", reverse = FALSE, saturation = 1
     palette = function(n) {
       if (n > length(pal)) {
         warning(
-          "Insufficient values in palette. ", n, " values needed, but only ",
-          length(pal), " available. Interpolating colors.",
+          "Insufficient values in palette. ",
+          n,
+          " values needed, but only ",
+          length(pal),
+          " available. Interpolating colors.",
           call. = FALSE
         )
         grDevices::colorRampPalette(pal)(n)
@@ -122,7 +138,12 @@ scale_fill_vibe <- function(palette = "Default", reverse = FALSE, saturation = 1
 #' # # Adjust saturation
 #' # scale_color_vibe_c("Azure", saturation = 0.5)  # desaturated
 #' # scale_color_vibe_c("Azure", saturation = 1.5)  # more saturated
-scale_color_vibe_c <- function(palette = "Default", reverse = FALSE, saturation = 1, ...) {
+scale_color_vibe_c <- function(
+  palette = "Default",
+  reverse = FALSE,
+  saturation = 1,
+  ...
+) {
   pal <- vibe_palette(name = palette, reverse = reverse)
   pal <- .adjust_saturation(pal, saturation)
 
@@ -150,7 +171,12 @@ scale_color_vibe_c <- function(palette = "Default", reverse = FALSE, saturation 
 #' # ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 #' #   geom_tile() +
 #' #   scale_fill_vibe_c()
-scale_fill_vibe_c <- function(palette = "Default", reverse = FALSE, saturation = 1, ...) {
+scale_fill_vibe_c <- function(
+  palette = "Default",
+  reverse = FALSE,
+  saturation = 1,
+  ...
+) {
   pal <- vibe_palette(name = palette, reverse = reverse)
   pal <- .adjust_saturation(pal, saturation)
 
@@ -180,12 +206,17 @@ scale_fill_vibe_c <- function(palette = "Default", reverse = FALSE, saturation =
 
   # Adjust saturation channel (S in HSV)
   hsv_mat[2, ] <- hsv_mat[2, ] * saturation
-  hsv_mat[2, ] <- pmin(1, pmax(0, hsv_mat[2, ]))  # clamp to [0, 1]
+  hsv_mat[2, ] <- pmin(1, pmax(0, hsv_mat[2, ])) # clamp to [0, 1]
 
   # Convert back to hex using hsv()
-  adjusted_colors <- mapply(function(h, s, v) {
-    grDevices::hsv(h, s, v)
-  }, hsv_mat[1, ], hsv_mat[2, ], hsv_mat[3, ])
+  adjusted_colors <- mapply(
+    function(h, s, v) {
+      grDevices::hsv(h, s, v)
+    },
+    hsv_mat[1, ],
+    hsv_mat[2, ],
+    hsv_mat[3, ]
+  )
 
   adjusted_colors
 }
