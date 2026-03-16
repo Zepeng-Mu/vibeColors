@@ -4,11 +4,11 @@
 \alias{scale_fill_vibe_c}
 \title{Continuous Fill Scale for Vibe Palettes}
 \usage{
-scale_fill_vibe_c(palette, reverse = FALSE, saturation = 1, ...)
+scale_fill_vibe_c(palette = "Default", reverse = FALSE, saturation = 1, ...)
 }
 \arguments{
 \item{palette}{The name of the palette to use. Use \code{list_vibe_palettes()}
-to see available options.}
+to see available options. Default is "Default".}
 
 \item{reverse}{Logical. Should the palette be reversed? Default is \code{FALSE}.}
 
@@ -29,5 +29,5 @@ Apply a vibe color palette to continuous fill aesthetics in ggplot2.
 # library(ggplot2)
 # ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 #   geom_tile() +
-#   scale_fill_vibe_c("palette_name")
+#   scale_fill_vibe_c()
 }

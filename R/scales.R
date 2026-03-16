@@ -3,7 +3,7 @@
 #' Apply a vibe color palette to discrete data in ggplot2.
 #'
 #' @param palette The name of the palette to use. Use `list_vibe_palettes()`
-#'   to see available options.
+#'   to see available options. Default is "Default".
 #' @param reverse Logical. Should the palette be reversed? Default is `FALSE`.
 #' @param saturation Numeric value between 0 and 2 to adjust color saturation.
 #'   Values less than 1 desaturate colors (0 = grayscale), values greater than 1
@@ -18,12 +18,15 @@
 #' # library(ggplot2)
 #' # ggplot(mtcars, aes(factor(cyl), fill = factor(cyl))) +
 #' #   geom_bar() +
-#' #   scale_color_vibe("palette_name")
+#' #   scale_color_vibe()
+#' #
+#' # # Use a specific palette
+#' # scale_color_vibe("Crimson")
 #' #
 #' # # Adjust saturation
 #' # scale_color_vibe("Crimson", saturation = 0.5)  # desaturated
 #' # scale_color_vibe("Crimson", saturation = 1.5)  # more saturated
-scale_color_vibe <- function(palette, reverse = FALSE, saturation = 1, ...) {
+scale_color_vibe <- function(palette = "Default", reverse = FALSE, saturation = 1, ...) {
   pal <- vibe_palette(name = palette, reverse = reverse)
   pal <- .adjust_saturation(pal, saturation)
 
@@ -50,7 +53,7 @@ scale_color_vibe <- function(palette, reverse = FALSE, saturation = 1, ...) {
 #' Apply a vibe color palette to fill aesthetics in ggplot2.
 #'
 #' @param palette The name of the palette to use. Use `list_vibe_palettes()`
-#'   to see available options.
+#'   to see available options. Default is "Default".
 #' @param reverse Logical. Should the palette be reversed? Default is `FALSE`.
 #' @param saturation Numeric value between 0 and 2 to adjust color saturation.
 #'   Values less than 1 desaturate colors (0 = grayscale), values greater than 1
@@ -65,8 +68,11 @@ scale_color_vibe <- function(palette, reverse = FALSE, saturation = 1, ...) {
 #' # library(ggplot2)
 #' # ggplot(mtcars, aes(factor(cyl), fill = factor(cyl))) +
 #' #   geom_bar() +
-#' #   scale_fill_vibe("palette_name")
-scale_fill_vibe <- function(palette, reverse = FALSE, saturation = 1, ...) {
+#' #   scale_fill_vibe()
+#' #
+#' # # Use a specific palette
+#' # scale_fill_vibe("Crimson")
+scale_fill_vibe <- function(palette = "Default", reverse = FALSE, saturation = 1, ...) {
   pal <- vibe_palette(name = palette, reverse = reverse)
   pal <- .adjust_saturation(pal, saturation)
 
@@ -93,7 +99,7 @@ scale_fill_vibe <- function(palette, reverse = FALSE, saturation = 1, ...) {
 #' Apply a vibe color palette to continuous data in ggplot2.
 #'
 #' @param palette The name of the palette to use. Use `list_vibe_palettes()`
-#'   to see available options.
+#'   to see available options. Default is "Default".
 #' @param reverse Logical. Should the palette be reversed? Default is `FALSE`.
 #' @param saturation Numeric value between 0 and 2 to adjust color saturation.
 #'   Values less than 1 desaturate colors (0 = grayscale), values greater than 1
@@ -108,12 +114,15 @@ scale_fill_vibe <- function(palette, reverse = FALSE, saturation = 1, ...) {
 #' # library(ggplot2)
 #' # ggplot(mtcars, aes(wt, mpg, color = hp)) +
 #' #   geom_point() +
-#' #   scale_color_vibe_c("palette_name")
+#' #   scale_color_vibe_c()
+#' #
+#' # # Use a specific palette
+#' # scale_color_vibe_c("Azure")
 #' #
 #' # # Adjust saturation
 #' # scale_color_vibe_c("Azure", saturation = 0.5)  # desaturated
 #' # scale_color_vibe_c("Azure", saturation = 1.5)  # more saturated
-scale_color_vibe_c <- function(palette, reverse = FALSE, saturation = 1, ...) {
+scale_color_vibe_c <- function(palette = "Default", reverse = FALSE, saturation = 1, ...) {
   pal <- vibe_palette(name = palette, reverse = reverse)
   pal <- .adjust_saturation(pal, saturation)
 
@@ -125,7 +134,7 @@ scale_color_vibe_c <- function(palette, reverse = FALSE, saturation = 1, ...) {
 #' Apply a vibe color palette to continuous fill aesthetics in ggplot2.
 #'
 #' @param palette The name of the palette to use. Use `list_vibe_palettes()`
-#'   to see available options.
+#'   to see available options. Default is "Default".
 #' @param reverse Logical. Should the palette be reversed? Default is `FALSE`.
 #' @param saturation Numeric value between 0 and 2 to adjust color saturation.
 #'   Values less than 1 desaturate colors (0 = grayscale), values greater than 1
@@ -140,8 +149,8 @@ scale_color_vibe_c <- function(palette, reverse = FALSE, saturation = 1, ...) {
 #' # library(ggplot2)
 #' # ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 #' #   geom_tile() +
-#' #   scale_fill_vibe_c("palette_name")
-scale_fill_vibe_c <- function(palette, reverse = FALSE, saturation = 1, ...) {
+#' #   scale_fill_vibe_c()
+scale_fill_vibe_c <- function(palette = "Default", reverse = FALSE, saturation = 1, ...) {
   pal <- vibe_palette(name = palette, reverse = reverse)
   pal <- .adjust_saturation(pal, saturation)
 

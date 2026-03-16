@@ -4,11 +4,11 @@
 \alias{scale_color_vibe}
 \title{Discrete Color Scale for Vibe Palettes}
 \usage{
-scale_color_vibe(palette, reverse = FALSE, saturation = 1, ...)
+scale_color_vibe(palette = "Default", reverse = FALSE, saturation = 1, ...)
 }
 \arguments{
 \item{palette}{The name of the palette to use. Use \code{list_vibe_palettes()}
-to see available options.}
+to see available options. Default is "Default".}
 
 \item{reverse}{Logical. Should the palette be reversed? Default is \code{FALSE}.}
 
@@ -29,7 +29,10 @@ Apply a vibe color palette to discrete data in ggplot2.
 # library(ggplot2)
 # ggplot(mtcars, aes(factor(cyl), fill = factor(cyl))) +
 #   geom_bar() +
-#   scale_color_vibe("palette_name")
+#   scale_color_vibe()
+#
+# # Use a specific palette
+# scale_color_vibe("Crimson")
 #
 # # Adjust saturation
 # scale_color_vibe("Crimson", saturation = 0.5)  # desaturated

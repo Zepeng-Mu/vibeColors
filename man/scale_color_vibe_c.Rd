@@ -4,11 +4,11 @@
 \alias{scale_color_vibe_c}
 \title{Continuous Color Scale for Vibe Palettes}
 \usage{
-scale_color_vibe_c(palette, reverse = FALSE, saturation = 1, ...)
+scale_color_vibe_c(palette = "Default", reverse = FALSE, saturation = 1, ...)
 }
 \arguments{
 \item{palette}{The name of the palette to use. Use \code{list_vibe_palettes()}
-to see available options.}
+to see available options. Default is "Default".}
 
 \item{reverse}{Logical. Should the palette be reversed? Default is \code{FALSE}.}
 
@@ -29,7 +29,10 @@ Apply a vibe color palette to continuous data in ggplot2.
 # library(ggplot2)
 # ggplot(mtcars, aes(wt, mpg, color = hp)) +
 #   geom_point() +
-#   scale_color_vibe_c("palette_name")
+#   scale_color_vibe_c()
+#
+# # Use a specific palette
+# scale_color_vibe_c("Azure")
 #
 # # Adjust saturation
 # scale_color_vibe_c("Azure", saturation = 0.5)  # desaturated

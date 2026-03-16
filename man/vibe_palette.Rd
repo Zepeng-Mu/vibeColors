@@ -4,11 +4,11 @@
 \alias{vibe_palette}
 \title{Get a Vibe Color Palette}
 \usage{
-vibe_palette(name, n = NULL, reverse = FALSE)
+vibe_palette(name = "Default", n = NULL, reverse = FALSE)
 }
 \arguments{
 \item{name}{The name of the palette to retrieve. Use \code{names(vibe_palettes)}
-to see available options.}
+to see available options. Default is "Default".}
 
 \item{n}{The number of colors to return. If \code{n} is greater than the number
 of colors in the palette, colors will be interpolated.}
@@ -24,6 +24,7 @@ for the specified palette.
 }
 \examples{
 # Get a palette (when palettes are defined)
-# vibe_palette("palette_name")
-# vibe_palette("palette_name", n = 10)
+# vibe_palette()
+# vibe_palette("Crimson")
+# vibe_palette("Crimson", n = 10)
 }

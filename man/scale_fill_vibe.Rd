@@ -4,11 +4,11 @@
 \alias{scale_fill_vibe}
 \title{Discrete Fill Scale for Vibe Palettes}
 \usage{
-scale_fill_vibe(palette, reverse = FALSE, saturation = 1, ...)
+scale_fill_vibe(palette = "Default", reverse = FALSE, saturation = 1, ...)
 }
 \arguments{
 \item{palette}{The name of the palette to use. Use \code{list_vibe_palettes()}
-to see available options.}
+to see available options. Default is "Default".}
 
 \item{reverse}{Logical. Should the palette be reversed? Default is \code{FALSE}.}
 
@@ -29,5 +29,8 @@ Apply a vibe color palette to fill aesthetics in ggplot2.
 # library(ggplot2)
 # ggplot(mtcars, aes(factor(cyl), fill = factor(cyl))) +
 #   geom_bar() +
-#   scale_fill_vibe("palette_name")
+#   scale_fill_vibe()
+#
+# # Use a specific palette
+# scale_fill_vibe("Crimson")
 }

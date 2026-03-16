@@ -13,6 +13,14 @@ NULL
 # Initialize empty palette list
 # This will be populated with actual palettes later
 vibe_palettes <- list(
+  Default = c(
+    "1" = "#F25555", # Carnation
+    "2" = "#FF9332", # Neon Carrot
+    "3" = "#FFF900", # Yellow
+    "4" = "#8AC000", # Pistachio
+    "5" = "#39B3E4", # Picton Blue
+    "6" = "#9C70CB"  # Amethyst
+  ),
   CBsafe1 = c(
     "1" = "#0E69B7", # Denim
     "2" = "#D00E12", # Monza
@@ -197,7 +205,7 @@ vibe_palettes <- list(
 #' for the specified palette.
 #'
 #' @param name The name of the palette to retrieve. Use `names(vibe_palettes)`
-#'   to see available options.
+#'   to see available options. Default is "Default".
 #' @param n The number of colors to return. If `n` is greater than the number
 #'   of colors in the palette, colors will be interpolated.
 #' @param reverse Logical. Should the palette be reversed? Default is `FALSE`.
@@ -207,9 +215,10 @@ vibe_palettes <- list(
 #' @export
 #' @examples
 #' # Get a palette (when palettes are defined)
-#' # vibe_palette("palette_name")
-#' # vibe_palette("palette_name", n = 10)
-vibe_palette <- function(name, n = NULL, reverse = FALSE) {
+#' # vibe_palette()
+#' # vibe_palette("Crimson")
+#' # vibe_palette("Crimson", n = 10)
+vibe_palette <- function(name = "Default", n = NULL, reverse = FALSE) {
   # Check if palette exists
   if (!name %in% names(vibe_palettes)) {
     stop(
