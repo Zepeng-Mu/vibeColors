@@ -206,8 +206,9 @@ vibe_palettes <- list(
 #'
 #' @param name The name of the palette to retrieve. Use `names(vibe_palettes)`
 #'   to see available options. Default is "Default".
-#' @param n The number of colors to return. If `n` is greater than the number
-#'   of colors in the palette, colors will be interpolated.
+#' @param n The number of colors to return. If `n` is less than or equal to the
+#'   number of colors in the palette, the first `n` colors are returned.
+#'   If `n` is greater, colors will be interpolated across the palette range.
 #' @param reverse Logical. Should the palette be reversed? Default is `FALSE`.
 #'
 #' @return A character vector of hex color codes.
@@ -239,9 +240,13 @@ vibe_palette <- function(name = "Default", n = NULL, reverse = FALSE) {
     pal <- rev(pal)
   }
 
-  # Interpolate if n is specified and different from palette length
-  if (!is.null(n) && n != length(pal)) {
-    pal <- grDevices::colorRampPalette(pal)(n)
+  # Return first n colors if specified, or interpolate if n > palette length
+  if (!is.null(n)) {
+    if (n > length(pal)) {
+      pal <- grDevices::colorRampPalette(pal)(n)
+    } else {
+      pal <- head(pal, n)
+    }
   }
 
   # Remove element names to avoid issues with certain functions
